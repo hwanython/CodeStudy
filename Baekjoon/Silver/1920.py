@@ -1,10 +1,10 @@
-# n = int(input())
-# A = list(map(int, input().rstrip().split()))
-# m = int(input())
-# M = list(map(int, input().rstrip().split()))
-#
-# print(A,M)
-#
+n = int(input())
+A = list(map(int, input().rstrip().split()))
+m = int(input())
+M = list(map(int, input().rstrip().split()))
+
+print(A,M)
+
 
 
 # def binarySearch(array, target, left, right):
@@ -25,24 +25,33 @@
 
 
 
-target =  7
-A = [30, 94, 27, 92, 21, 37, 25, 47, 25, 53, 98, 19, 32, 32, 7]
+# target =  7
+# A = [30, 94, 27, 92, 21, 37, 25, 47, 25, 53, 98, 19, 32, 32, 7]
 A.sort()
-left = 0
-right = len(A) - 1
+targets = M
 
-while left<=right:
-    mid = (left + right)//2
-    if A[mid] == target:
-        print("good")
-        break
-    elif A[mid] > target:
-        right = mid -1
-    else:
-        left = mid + 1
+for target in targets:
+    left = 0
+    right = len(A) - 1
+    error = 0
+    correct = 0
+    while left <= right:
+        mid = (left + right) // 2
+        if A[mid] == target:
+            correct = 1
+            print("good")
+            break
+        elif A[mid] > target:
+            right = mid - 1
+        else:
+            left = mid + 1
 
-print("Not good")
+    if correct != 0:
+        print("not good")
 
+# if
+# print("Not good")
+#
 
 
 
