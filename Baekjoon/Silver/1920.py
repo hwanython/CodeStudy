@@ -23,10 +23,6 @@ print(A,M)
 # M의 원소가 A에 있다면 =>1 아니면 =>0
 
 
-
-
-# target =  7
-# A = [30, 94, 27, 92, 21, 37, 25, 47, 25, 53, 98, 19, 32, 32, 7]
 A.sort()
 targets = M
 
@@ -39,20 +35,14 @@ for target in targets:
         mid = (left + right) // 2
         if A[mid] == target:
             correct = 1
-            print("good")
+            print("1")
             break
         elif A[mid] > target:
             right = mid - 1
         else:
             left = mid + 1
-
-    if correct != 0:
-        print("not good")
-
-# if
-# print("Not good")
-#
-
+    if correct == 0:
+        print("0")
 
 
 
